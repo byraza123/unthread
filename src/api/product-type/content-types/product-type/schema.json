@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_types",
+  "info": {
+    "singularName": "product-type",
+    "pluralName": "product-types",
+    "displayName": "product_type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Category_name": {
+      "type": "enumeration",
+      "enum": [
+        "abc",
+        "ecd",
+        "fgh"
+      ]
+    },
+    "sub_category": {
+      "type": "enumeration",
+      "enum": [
+        "abc",
+        "cde",
+        "rfv"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "product_type"
+    }
+  }
+}

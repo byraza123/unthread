@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Product_Information": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Customer_can_see_this": {
+      "type": "richtext"
+    },
+    "Style_code": {
+      "type": "string"
+    },
+    "Labour_Code": {
+      "type": "string"
+    },
+    "Labour_Charge": {
+      "type": "string"
+    },
+    "Upload_Primary_Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Upload_Remaining_Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "Cost_Per_Item": {
+      "type": "integer"
+    },
+    "SKU": {
+      "type": "string"
+    },
+    "Barcode_ISBN_UPC_GTIN_etc": {
+      "type": "string"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vendor.vendor",
+      "inversedBy": "products"
+    },
+    "product_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-type.product-type",
+      "inversedBy": "products"
+    },
+    "product_statuses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-status.product-status",
+      "mappedBy": "product"
+    }
+  }
+}
